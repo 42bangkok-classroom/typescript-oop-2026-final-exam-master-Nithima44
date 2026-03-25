@@ -1,3 +1,1 @@
-export class ProductModule {
-    
-}
+export class ProductModule {}
