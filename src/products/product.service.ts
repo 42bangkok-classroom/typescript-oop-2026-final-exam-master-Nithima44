@@ -1,7 +1,7 @@
-/*import { Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import { Product } from './products/product.interface'
+import { Product } from './product.interface';
 
 @Injectable()
 export class ProductService {
@@ -13,4 +13,8 @@ export class ProductService {
     const data = await fs.readFile(this.filePath, 'utf-8');
     return JSON.parse(data) as Product[];
   }
-}*/
+
+  async findAll(): Promise<Product[]> {
+    return await this.readData();
+  }
+}
